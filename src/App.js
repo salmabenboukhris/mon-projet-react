@@ -25,17 +25,25 @@ function App() {
   const supprimerTache = (id) => {
     setTaches(taches.filter((t) => t.id !== id));
   };
+  const modifierTache = (id, nouveauTexte) => {
+  setTaches(
+    taches.map((t) =>
+      t.id === id ? { ...t, texte: nouveauTexte } : t
+    )
+  );
+};
 
   return (
-    <div>
-      <h1>To-Do List Interactive</h1>
-      <TodoForm ajouterTache={ajouterTache} />
-      <TodoList
-        taches={taches}
-        changerEtat={changerEtat}
-        supprimerTache={supprimerTache}
-      />
-    </div>
+   <div className="container mt-5">
+  <h1 className="text-center mb-4">To-Do List Interactive</h1>
+  <TodoForm ajouterTache={ajouterTache} />
+  <TodoList
+    taches={taches}
+    changerEtat={changerEtat}
+    supprimerTache={supprimerTache}
+    modifierTache={modifierTache}
+  />
+</div>
   );
 }
 

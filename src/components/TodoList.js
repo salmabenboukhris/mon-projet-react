@@ -1,6 +1,6 @@
-import TodoItem from './TodoItem';
+import TodoItem from "./TodoItem";
 
-function TodoList({ taches, changerEtat, supprimerTache }) {
+function TodoList({ taches, changerEtat, supprimerTache, modifierTache }) {
   return (
     <ul>
       {taches.map((tache) => (
@@ -9,6 +9,7 @@ function TodoList({ taches, changerEtat, supprimerTache }) {
           tache={tache}
           changerEtat={changerEtat}
           supprimerTache={supprimerTache}
+          modifierTache={modifierTache}
         />
       ))}
     </ul>
